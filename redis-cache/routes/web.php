@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RedisCacheController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/set-cache', [RedisCacheController::class, 'setCacheValue']);
+Route::get('/get-cache', [RedisCacheController::class, 'getCacheValue']);
