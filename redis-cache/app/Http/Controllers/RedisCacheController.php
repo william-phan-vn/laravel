@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 
 class RedisCacheController extends Controller
 {
@@ -12,7 +13,7 @@ class RedisCacheController extends Controller
         $value = 'Hello, Redis!';
 
         // Set a value in the Redis cache
-        Redis::set($key, $value);
+        Cache::set($key, $value);
 
         return "Value with key '$key' set in Redis cache.";
     }
@@ -22,7 +23,7 @@ class RedisCacheController extends Controller
         $key = 'sample_key';
 
         // Retrieve a value from the Redis cache
-        $value = Redis::get($key);
+        $value = Cache::get($key);
 
         if ($value !== null) {
             return "Value with key '$key' from Redis cache: $value";
