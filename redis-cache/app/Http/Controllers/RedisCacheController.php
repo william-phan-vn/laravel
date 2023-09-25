@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
+use Predis\ClientInterface;
+
 
 class RedisCacheController extends Controller
 {
